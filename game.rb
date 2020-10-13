@@ -11,3 +11,8 @@ puts "Welcome #{name}!"
 # Store a random number for the player to guess
 puts "Can you guess my random number between 1 - 100?"
 target = rand(100) + 1
+
+#Track how many guesses a player has made
+num_guesses = 0
+
+puts "You've got #{10 - num_guesses} guesses left."
