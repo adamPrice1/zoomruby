@@ -7,3 +7,7 @@ input = gets
 name = input.chomp
 
 puts "Welcome #{name}!"
+
+# Store a random number for the player to guess
+puts "Can you guess my random number between 1 - 100?"
+target = rand(100) + 1
