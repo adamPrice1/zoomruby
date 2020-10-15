@@ -15,6 +15,22 @@ target = rand(100) + 1
 #Track how many guesses a player has made
 num_guesses = 0
 
+guessed_it = false
+
 puts "You've got #{10 - num_guesses} guesses left."
 print "Your guess: "
 guess = gets.to_i
+
+if guess < target
+  puts "Too low!"
+elsif guess > target
+  puts "Too High!"
+elsif guess == target
+  puts "Good job #{name}!"
+  puts "You took #{num_guesses} attempts!"
+  guessed_it = true
+end
+
+unless guessed_it
+  puts "Sorry you failed, it was #{target}"
+end
