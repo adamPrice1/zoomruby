@@ -17,9 +17,13 @@ num_guesses = 0
 
 guessed_it = false
 
+until num_guesses == 10 || guessed_it
+
 puts "You've got #{10 - num_guesses} guesses left."
 print "Your guess: "
 guess = gets.to_i
+
+num_guesses += 1
 
 if guess < target
   puts "Too low!"
@@ -31,6 +35,7 @@ elsif guess == target
   guessed_it = true
 end
 
+end
 unless guessed_it
   puts "Sorry you failed, it was #{target}"
 end
