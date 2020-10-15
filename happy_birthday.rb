@@ -2,11 +2,15 @@ print "Hi What's your name? "
 name = gets.chomp
 
 i = 0
-while i < 4
-  if i == 2
-    puts "Happy birthday dear #{name}"
+until i == 4
+  case i
+   when 2
+    end_of_line = "dear #{name}"
+   when 3
+    end_of_line = "to you."
   else
-    puts "Happy birthday to you"
+    end_of_line = "to you"
   end
+  puts "Happy birthday #{end_of_line}"
   i += 1
 end
