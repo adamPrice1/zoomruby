@@ -8,5 +8,6 @@ end
 input = input.to_i
 
 for i in 1..input
+  print " " * (input - i)
   puts "*" * i
 end
