@@ -7,12 +7,6 @@ end
 
 input = input.to_i
 
-# for i in 1..input
-#   print " " * ((input - i - 1) / 2).ceil
-#   print  "*" * i
-#   puts " " * ((input - i) / 2).ceil
-# end
-
 for i in 1..input
   print " " * (input - i)
   puts "* " * i
@@ -22,8 +16,3 @@ end
   print " " * (input - i)
   puts "* " * i
 end
-=begin
-   *
-  * *
- * * *
-=end
