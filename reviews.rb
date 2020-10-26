@@ -6,4 +6,6 @@ end
 
 relevant_lines = lines.find_all {|line| line.include?("Truncated")}
 
-puts relevant_lines
+reviews = relevant_lines.reject {|line| line.include?("--")}
+
+puts reviews
