@@ -45,6 +45,11 @@ p video.comments, song.comments
 
 class Photo
   include AcceptsComments
+
+  def initialize
+    @format = "jpeg"
+  end
+  
   def show
     puts "displaying #{object_id}..."
   end
