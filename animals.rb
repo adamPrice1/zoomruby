@@ -28,7 +28,13 @@ class Dog < Animal
 end
 
 class Bird < Animal
+  def talk
+    puts "#{@name} says chirp chirp"
+  end
 end
 
 class Cat < Animal
+  def talk
+    puts "#{@name} says meow"
+  end
 end
