@@ -38,3 +38,10 @@ class Cat < Animal
     puts "#{@name} says meow"
   end
 end
+
+class Armadillo < Animal
+  def move(destination)
+    puts "#{@name} unrolls"
+    puts "#{@name} runs to #{destination}"
+  end
+end
