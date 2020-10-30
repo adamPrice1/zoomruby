@@ -44,8 +44,10 @@ truck.load_bed("259 bouncy balls")
 puts "the truck is carrying #{truck.cargo}"
 
 car = Car.new
+puts car.instance_variables
 car.odometer = 11432
 car.gas_used = 366
+puts car.instance_variables
 
 puts "Lifetime Mileage"
 puts car.mileage
