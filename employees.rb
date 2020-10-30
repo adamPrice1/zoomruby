@@ -67,3 +67,13 @@ end
 
 hourly_employee = HourlyEmployee.new("John Smith", 14.97, 30)
 hourly_employee.print_pay_stub
+
+
+
+ivan = HourlyEmployee.new("Ivan Stokes",    12.75,  25)
+harold = HourlyEmployee.new("Harold Nguyen",12.75,  25)
+tamara = HourlyEmployee.new("Tamara wells", 12.75,  25)
+susie = HourlyEmployee.new("susie powell",  12.75,  25)
+
+edwin = HourlyEmployee.new("Edwin Burgess",    10.50,  20)
+ethel = HourlyEmployee.new("Ethel harris",    10.50,  20)
