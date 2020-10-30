@@ -35,6 +35,9 @@ class Truck < Vehicle
 end
 
 class Motorcylce < Vehicle
+  def steer
+    puts "Turn front wheel"
+  end
 end
 
 truck = Truck.new
