@@ -13,7 +13,7 @@ module AcceptsComments
 end
 
 class Clip
-  include AcceptsComments
+
   attr_reader :comments
 
   def initialize
@@ -26,10 +26,12 @@ class Clip
 end
 
 class Video < Clip
+  include AcceptsComments
   attr_accessor :resolution
 end
 
 class Song < Clip
+  include AcceptsComments
   attr_accessor :beats_per_minute
 end
 
@@ -40,3 +42,16 @@ song = Song.new
 song.add_comment("Awesome beat.")
 
 p video.comments, song.comments
+
+class Photo
+  include AcceptsComments
+  def show
+    puts "displaying #{object_id}..."
+  end
+end
+
+photo = Photo.new
+photo.add_comment("Beautiful colors")
+
+p photo.comments
+photo.show
