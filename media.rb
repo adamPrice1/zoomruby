@@ -1,13 +1,23 @@
-class Clip
-
-  attr_reader :comments
-
-  def initialize
-    @comments = []
+module AcceptsComments
+  def comments
+    if @comments
+      @comments
+    else
+      @comments = []
+    end
   end
 
   def add_comment(comment)
     comments << comment
+  end
+end
+
+class Clip
+  include AcceptsComments
+  attr_reader :comments
+
+  def initialize
+    @comments = []
   end
 
   def play
@@ -27,6 +37,6 @@ video = Video.new
 video.add_comment("cool slomo effect")
 video.add_comment("Weird Ending")
 song = Song.new
-song.add_coment("Awesome beat.")
+song.add_comment("Awesome beat.")
 
 p video.comments, song.comments
