@@ -84,10 +84,8 @@ hourly_employee.print_pay_stub
 
 
 
-ivan = HourlyEmployee.new("Ivan Stokes",    12.75,  25)
-harold = HourlyEmployee.new("Harold Nguyen",12.75,  25)
-tamara = HourlyEmployee.new("Tamara wells", 12.75,  25)
-susie = HourlyEmployee.new("susie powell",  12.75,  25)
+angela = HourlyEmployee.security_guard("Angela Matthews")
+ivan = HourlyEmployee.cashier("Ivan Stokes")
 
-edwin = HourlyEmployee.new("Edwin Burgess",    10.50,  20)
-ethel = HourlyEmployee.new("Ethel harris",    10.50,  20)
+angela.print_pay_stub
+ivan.print_pay_stub
