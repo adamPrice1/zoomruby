@@ -19,3 +19,9 @@ puts square.people_scared
 jellies = [box,cone,square]
 
 puts jellies.select {|jelly| jelly.venom_level >= 100 }
+
+box.swim_faster
+
+cone.swim_slower
+
+square.sink_to_bottom
