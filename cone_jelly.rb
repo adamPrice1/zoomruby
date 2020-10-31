@@ -1,7 +1,7 @@
 require_relative "Jelly"
-
+require_relative 'mixins'
 class ConeJelly < Jelly
-
+  include ExtraJellyMethods
   attr_accessor :fish_eaten
 
   def swim_away_from_predator
