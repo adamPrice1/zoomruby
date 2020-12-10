@@ -1,0 +1,60 @@
+# Things that are wrong here:
+# 1. implementing or statements is simply an issue of changing intersection to concatenation, but doing so would add duplicate code,
+# so the need for refactoring further is clear.
+# 2. search method is messy  
+#
+
+require 'set'
+require 'json'
+
+class SearchEngine
+
+  def initialize(file)
+    @reverse_index = nil
+    @name_words = Set.new
+    @file = file
+    parse_file
+  end
+
+  def search(input)
+    if input.split.length > 1
+      result = []
+      input.split.each do |word|
+        if result.empty?
+          result = @reverse_index[word]
+        else
+          result = result.intersection(@reverse_index[word])
+        end
+      end
+      puts "we found #{result.length} matching products"
+      result.each {|prod| puts @data[prod].to_s }
+    else
+      if @reverse_index[input]
+        puts "we found #{@reverse_index[input].length} matching products"
+        @reverse_index[input].each {|prod| puts @data[prod].to_s }
+      else
+        puts "No matches"
+      end
+    end
+  end
+
+  private
+
+  def parse_file
+    @data = JSON.parse(@file)
+    @data.each { |prod| @name_words.merge(prod["name"].downcase.split) }
+    @reverse_index = Hash.new {|hash, key| hash[key] = [] }
+
+    @name_words.each do |word|
+      @data.each { |prod| @reverse_index[word].push(prod["id"]) if prod["name"].downcase.include?(word) }
+    end
+    puts "Data parsed!"
+  end
+
+end
+
+file = File.read('search_engine_input.json')
+searcher = SearchEngine.new(file)
+
+print "search: "
+searcher.search(gets.chomp.downcase)
